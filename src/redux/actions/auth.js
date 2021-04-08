@@ -1,5 +1,5 @@
 import { apiDelete, apiGet, apiPost, apiPut, clearUserData, getItem, getUserData, setItem, setUserData , } from '../../utils/utils';
-import { OTP_VERIFY ,LOGIN ,USER_SEARCH } from '../../config/urls';
+import { OTP_VERIFY ,LOGIN ,USER_SEARCH, SEARCH } from '../../config/urls';
 import types from '../types';
 import store from '../store';
 
@@ -75,14 +75,20 @@ export function UserData(data = {}) {
 }
 
 
-// export function ChangeThemeColor(themeColorId) {
-
-//   dispatch({
-//     type:types.CHANGE_THEME_COLOR,
-//     payload:themeColorId
-//   })
-// }
 
 
 
 
+
+export function ChangeThemeColor(themeColorId) {
+
+  dispatch({
+    type:types.CHANGE_THEME_COLOR,
+    payload:themeColorId
+  })
+}
+
+export function UserSearch(searchtext ){
+ let URL = `${SEARCH}`+ `?name=${searchtext}` 
+ return apiGet(URL)
+}

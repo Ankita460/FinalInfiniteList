@@ -4,5 +4,9 @@ export default{
     TAB_ROUTES : "TabRoutes",
     LIST : 'List',
     PROFILE : "Profile",
-    HOMEPAGE :"HomePage"
+    HOMEPAGE :"HomePage",
+    CHART: "Chart",
+    QRCODE: "QrCode",
+    IMAGE_ZOOM: "ImageZoom",
+    CHAT: "Chat"
 }

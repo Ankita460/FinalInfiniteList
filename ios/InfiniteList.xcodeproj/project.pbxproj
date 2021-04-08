@@ -12,6 +12,16 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		D4C5885D49D44A598D063A5D /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6A9AD72A72CE46BD8779A66D /* OpenSans-Bold.ttf */; };
+		FD262F4EE43F4F7FBB91B379 /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAF4AFB303D74DBCBDC85E2C /* OpenSans-BoldItalic.ttf */; };
+		0940676FDB1D49B189075B10 /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F0A98AEDA2F43E3B4BD9AAF /* OpenSans-ExtraBold.ttf */; };
+		ECD6E96177B449929A8FE4ED /* OpenSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 33F1B78B53CB44E0B108AAC8 /* OpenSans-ExtraBoldItalic.ttf */; };
+		A47D0C9BF3944C08B2C6875F /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 071DE69278E149E2A35D0DEB /* OpenSans-Italic.ttf */; };
+		D5800AABE0AA4682A43650E2 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD62740EE5684D4C8652D17D /* OpenSans-Light.ttf */; };
+		0A1E9696D4264B8A90023645 /* OpenSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EECEE2D57A54408BB27E3115 /* OpenSans-LightItalic.ttf */; };
+		A7F6AE6BC33E4A45BA3AF7A3 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C2E34B0EC4DB43C1ACA70467 /* OpenSans-Regular.ttf */; };
+		ADA1D45F23334200BC9F818C /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64AF81DFDF1B4ED883879437 /* OpenSans-SemiBold.ttf */; };
+		C6D9178EEEAA4518B166601B /* OpenSans-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E79A763696D4F56B7BA04F1 /* OpenSans-SemiBoldItalic.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +46,16 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = InfiniteList/main.m; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = InfiniteList/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		6A9AD72A72CE46BD8779A66D /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; name = "OpenSans-Bold.ttf"; path = "../src/assets/fonts/OpenSans-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FAF4AFB303D74DBCBDC85E2C /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; name = "OpenSans-BoldItalic.ttf"; path = "../src/assets/fonts/OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0F0A98AEDA2F43E3B4BD9AAF /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; name = "OpenSans-ExtraBold.ttf"; path = "../src/assets/fonts/OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		33F1B78B53CB44E0B108AAC8 /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; name = "OpenSans-ExtraBoldItalic.ttf"; path = "../src/assets/fonts/OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		071DE69278E149E2A35D0DEB /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; name = "OpenSans-Italic.ttf"; path = "../src/assets/fonts/OpenSans-Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DD62740EE5684D4C8652D17D /* OpenSans-Light.ttf */ = {isa = PBXFileReference; name = "OpenSans-Light.ttf"; path = "../src/assets/fonts/OpenSans-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		EECEE2D57A54408BB27E3115 /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; name = "OpenSans-LightItalic.ttf"; path = "../src/assets/fonts/OpenSans-LightItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C2E34B0EC4DB43C1ACA70467 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; name = "OpenSans-Regular.ttf"; path = "../src/assets/fonts/OpenSans-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		64AF81DFDF1B4ED883879437 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; name = "OpenSans-SemiBold.ttf"; path = "../src/assets/fonts/OpenSans-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0E79A763696D4F56B7BA04F1 /* OpenSans-SemiBoldItalic.ttf */ = {isa = PBXFileReference; name = "OpenSans-SemiBoldItalic.ttf"; path = "../src/assets/fonts/OpenSans-SemiBoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +129,7 @@
 				00E356EF1AD99517003FC87E /* InfiniteListTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
+				6FEDD27563724D98890614E4 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -123,6 +144,24 @@
 			);
 			name = Products;
 			sourceTree = "<group>";
+		};
+		6FEDD27563724D98890614E4 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				6A9AD72A72CE46BD8779A66D /* OpenSans-Bold.ttf */,
+				FAF4AFB303D74DBCBDC85E2C /* OpenSans-BoldItalic.ttf */,
+				0F0A98AEDA2F43E3B4BD9AAF /* OpenSans-ExtraBold.ttf */,
+				33F1B78B53CB44E0B108AAC8 /* OpenSans-ExtraBoldItalic.ttf */,
+				071DE69278E149E2A35D0DEB /* OpenSans-Italic.ttf */,
+				DD62740EE5684D4C8652D17D /* OpenSans-Light.ttf */,
+				EECEE2D57A54408BB27E3115 /* OpenSans-LightItalic.ttf */,
+				C2E34B0EC4DB43C1ACA70467 /* OpenSans-Regular.ttf */,
+				64AF81DFDF1B4ED883879437 /* OpenSans-SemiBold.ttf */,
+				0E79A763696D4F56B7BA04F1 /* OpenSans-SemiBoldItalic.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -214,6 +253,16 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				D4C5885D49D44A598D063A5D /* OpenSans-Bold.ttf in Resources */,
+				FD262F4EE43F4F7FBB91B379 /* OpenSans-BoldItalic.ttf in Resources */,
+				0940676FDB1D49B189075B10 /* OpenSans-ExtraBold.ttf in Resources */,
+				ECD6E96177B449929A8FE4ED /* OpenSans-ExtraBoldItalic.ttf in Resources */,
+				A47D0C9BF3944C08B2C6875F /* OpenSans-Italic.ttf in Resources */,
+				D5800AABE0AA4682A43650E2 /* OpenSans-Light.ttf in Resources */,
+				0A1E9696D4264B8A90023645 /* OpenSans-LightItalic.ttf in Resources */,
+				A7F6AE6BC33E4A45BA3AF7A3 /* OpenSans-Regular.ttf in Resources */,
+				ADA1D45F23334200BC9F818C /* OpenSans-SemiBold.ttf in Resources */,
+				C6D9178EEEAA4518B166601B /* OpenSans-SemiBoldItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

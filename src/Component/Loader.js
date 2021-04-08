@@ -1,13 +1,13 @@
 
 import React, { Component } from "react";
 import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
-export default function Loader({isvalid}) {
+export default function Loader({isvalid, loadingColor, size}) {
     if (isvalid) {
         return (
             
                 <View style={[styles.container, styles.horizontal]}>
                    
-                    <ActivityIndicator size="large" color="white" />
+                    <ActivityIndicator size={!!size?size:"large"} color={!!loadingColor?loadingColor:"white"} />
                    
                 </View>
         

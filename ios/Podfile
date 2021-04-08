@@ -12,6 +12,10 @@ target 'InfiniteList' do
     :hermes_enabled => false
   )
 
+  pod 'react-native-camera', :path => '../node_modules/react-native-camera'
+
+  pod 'RNPermissions', :path => '../node_modules/react-native-permissions'
+
   target 'InfiniteListTests' do
     inherit! :complete
     # Pods for testing

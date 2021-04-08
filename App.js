@@ -7,6 +7,7 @@ import { clearUserData, getUserData } from './src/utils/utils';
 import store from './src/redux/store';
 import { connect , Provider } from 'react-redux';
 import types from './src/redux/types';
+import SplashScreen from 'react-native-splash-screen';
 
 
 const { dispatch } = store;
@@ -19,7 +20,9 @@ export default class App extends Component {
           type: types.OTP_VERIFY,
           payload: userData 
         })
+        SplashScreen.hide();
       }
+      else{SplashScreen.hide();}
     })
 
 
@@ -36,3 +39,15 @@ export default class App extends Component {
 } 
 
 
+// import React,{Component} from 'react';
+// import {View, Text} from 'react-native';
+
+// export default class App extends Component{
+// render(){
+//   return(
+//     <View>
+//       <Text>sndcmbjdsjcgh</Text>
+//       </View>
+//   )
+// }
+// }

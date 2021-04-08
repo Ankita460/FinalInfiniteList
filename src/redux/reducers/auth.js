@@ -26,6 +26,11 @@ export default function counterReducer(state = initialState, action) {
       
       return {...state, userData:{}};
     }
+    case ActionTypes.CHANGE_THEME_COLOR:{
+      const themeColorId = action.payload
+      
+      return{...state , themeColor:themeColorId}
+    }
 
     
     

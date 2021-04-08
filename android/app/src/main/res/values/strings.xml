@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">InfiniteList</string>
+    <string name="facebook_app_id">1105109203303677</string>
+    <string name="server_client_id">248544068770-6l21sbfcfgn2bpgfl0rv3miv8jg6ro58.apps.googleusercontent.com</string>
+
 </resources>

@@ -1,11 +1,17 @@
 import store from "../redux/store"
 
 export default{
-    themeColor :"#538d22",    
+    themeColor :"#ef6157",    
     buttonText:"white",
     placeholderText:"gray",
     valueText:"black",
-    textInputBg:"white",
-    loginBg: "Pink",
+    textInputBg:"lightgray",
+    loginBg: "#663399",
+    sendBtn: "black",
+    listBorder: "lightgray",
+    star: "#FFD700",
+    share: "#1E90FF",
+    fbBg: "#4267b2",
+
 }
 
