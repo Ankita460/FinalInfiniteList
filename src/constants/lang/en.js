@@ -14,7 +14,8 @@ export default{
     HEADER_SEARCH: "SEARCH",
     HEADER_CHART: "CHART",
     HEADER_QRCODE: "QR CODE",
-    IMAGE_ZOOM: "IMAGE ZOOM"
+    IMAGE_ZOOM: "IMAGE ZOOM",
+    CHAT: "Chat"
    
 
 

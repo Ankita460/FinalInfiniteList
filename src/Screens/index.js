@@ -9,3 +9,4 @@ export {default as Chart} from "./Chart/Chart"
 export {default as QrCode} from "./QrCode/QrCode"
 export {default as ZoomImage} from "./ZoomImage/ZoomImage"
 export {default as Chat} from "./Chat/Chat";
+export {default as ConversationChat} from "./ConversationChat/ConversationChat";

@@ -1,5 +1,5 @@
 import { apiDelete, apiGet, apiPost, apiPut, clearUserData, getItem, getUserData, setItem, setUserData , } from '../../utils/utils';
-import { OTP_VERIFY ,LOGIN ,USER_SEARCH, SEARCH } from '../../config/urls';
+import { OTP_VERIFY ,LOGIN ,USER_SEARCH, SEARCH, GET_ALL_CONVERSATIONS } from '../../config/urls';
 import types from '../types';
 import store from '../store';
 
@@ -91,4 +91,9 @@ export function ChangeThemeColor(themeColorId) {
 export function UserSearch(searchtext ){
  let URL = `${SEARCH}`+ `?name=${searchtext}` 
  return apiGet(URL)
+}
+
+export function getAllConversations() {
+  let URL= `${GET_ALL_CONVERSATIONS}` + `?limit=5&skip=0`
+  return apiGet(URL)
 }

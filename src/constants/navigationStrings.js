@@ -8,5 +8,6 @@ export default{
     CHART: "Chart",
     QRCODE: "QrCode",
     IMAGE_ZOOM: "ImageZoom",
-    CHAT: "Chat"
+    CHAT: "Chat",
+    CONVERSATION: "ConversationChat"
 }

@@ -5,7 +5,7 @@ import navigationStrings from "../constants/navigationStrings";
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 
-import { Chart, Chat, HomePage, List, Profile, QrCode, ZoomImage } from "../Screens";
+import { Chart, Chat, HomePage, List, Profile, QrCode, ZoomImage, ConversationChat } from "../Screens";
 import Imagezoom from "react-native-image-pan-zoom";
 
 // const Stack=createStackNavigator();
@@ -25,6 +25,7 @@ export default function(){
       <Drawer.Screen name={navigationStrings.QRCODE} component={QrCode} />
       <Drawer.Screen name={navigationStrings.IMAGE_ZOOM} component={ZoomImage} />
       <Drawer.Screen name={navigationStrings.CHAT} component={Chat} />
+      <Drawer.Screen name={navigationStrings.CONVERSATION} component={ConversationChat} />
 
     </Drawer.Navigator>
   </>
