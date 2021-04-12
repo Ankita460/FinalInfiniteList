@@ -15,9 +15,27 @@ export default{
     HEADER_CHART: "CHART",
     HEADER_QRCODE: "QR CODE",
     IMAGE_ZOOM: "IMAGE ZOOM",
-    CHAT: "Chat"
-   
-
-
-
+    CHAT: "Chat",
+    CREATE_ACCOUNT: "Create Account",
+    ENTER_YOUR_MOBILE_NUMBER_TO_CREATE_ACCOUNT: "Enter your mobile number to create account.",
+    WE_WILL_SEND_YOU_A_ONE_TIME_PASSWORD: "We will send you a one time password(OTP)",
+   WE_HAVE_SEND_THE_OTP_ON_YOU_WILL_APPLY_TO_THE_FIELD:"We have send the OTP on you will apply to the fields.",
+    PERSON_NAME:'Linnie Ramsey',
+   PHONE_NUMBER:"9882635278",
+   MOBILE:"MOBILE",
+   EMAIL: "Email",
+   EMAIL_ID: "abc123@gmail.com",
+   ABOUT_US: "About us",
+   PROFILE: "Profile",
+   INFINITE_LIST_DATA_NAME: "Name:",
+   INFINITE_LIST_DATA_GENDER: "Gender:",
+   INFINITE_LIST_DATA_DOB: "DOB:",
+ INFINITE_LIST_DATA_ADDRESS: "Address:",
+ RESEND: "Resend",
+ TERMS_AND_CONDITION: "Terms & Conditions",
+ TERMS_CONDITION: "terms and conditions",
+ PRIVACY: "Privacy & Policy",
+ POLICY: "Privacy and Policy",
+ OTP_SENT_SUCCESSFULLY: "OTP sent successfully",
+ 
 }

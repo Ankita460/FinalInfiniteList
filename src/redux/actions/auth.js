@@ -1,5 +1,5 @@
 import { apiDelete, apiGet, apiPost, apiPut, clearUserData, getItem, getUserData, setItem, setUserData , } from '../../utils/utils';
-import { OTP_VERIFY ,LOGIN ,USER_SEARCH, SEARCH, GET_ALL_CONVERSATIONS } from '../../config/urls';
+import { OTP_VERIFY ,LOGIN ,USER_SEARCH, SEARCH, GET_ALL_CONVERSATIONS, GET_CONVERSATION_MESSAGES } from '../../config/urls';
 import types from '../types';
 import store from '../store';
 
@@ -96,4 +96,12 @@ export function UserSearch(searchtext ){
 export function getAllConversations() {
   let URL= `${GET_ALL_CONVERSATIONS}` + `?limit=5&skip=0`
   return apiGet(URL)
+}
+
+export function getUserMessgeOneToOne(id) {
+let URL= `${GET_CONVERSATION_MESSAGES}` + `?commonConversationId=${id}`
+return apiGet(URL)
+
+
+  
 }

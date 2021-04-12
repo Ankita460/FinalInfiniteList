@@ -8,52 +8,41 @@ import {
   TextInput,
   Button,
 } from 'react-native';
-
-import Header from '../../Component/Header';
-
 import actions from '../../redux/actions';
 import {showMessage, hideMessage} from 'react-native-flash-message';
-
 import OTPTextView from 'react-native-otp-textinput';
 import strings from '../../constants/lang';
 import colors from '../../styles/colors';
-import SendOtpButton from '../../Component/SendOtpButton';
-
+import ButtonComponent from '../../Component/ButtonComponent';
+import imagePath from '../../constants/imagePath';
 export default class OtpVerification extends Component {
   constructor(props) {
     super(props);
-    this.handleBackButtonClick = this.handleBackButtonClick.bind(this);
-  }
-  handleBackButtonClick() {
-    this.props.navigation.goBack(null);
-    return true;
   }
 
   state = {
     inputText: '',
-    isvalid:""
+    isvalid: '',
   };
-
   checkData = () => {
     const {userId} = this.props.route.params;
     const {otpInput} = this.state;
-    
+
     this.setState({
-      isvalid:true
-  })
+      isvalid: true,
+    });
 
     actions
       .OTPVerify({userId, otp: otpInput, deviceToken: '123'})
       .then(response => {
         console.log(response, '   verify');
-        this.setState({  isvalid:false })
+        this.setState({isvalid: false});
         showMessage({
           type: 'success',
           message: 'OTP verified ',
         });
       })
       .catch(error => {
-
         this.setState({isvalid: false}),
           showMessage({
             type: 'danger',
@@ -66,42 +55,43 @@ export default class OtpVerification extends Component {
 
   render() {
     const {isvalid} = this.state;
-const {phoneNumber} = this.props.route.params;
+    const {phoneNumber} = this.props.route.params;
     return (
       <View>
-        <Header
-          textData={strings.ENTER_VERIFICATION_CODE}
-          onBack={() => this.handleBackButtonClick()}
-        />
-
-        <View style={{marginVertical: 60}}>
-          <Text style={styles.sentCode}>
-            {strings.WE_HAVE_SENT_A_VERIFICATION_CODE}{' '}
+        <View style={styles.headerView}>
+          <Text style={styles.headerText}>
+            {strings.ENTER_VERIFICATION_CODE}
           </Text>
-          <Text style={styles.phone}>We have send the OTP on {phoneNumber} you will apply to the fields. </Text>
+        </View>
+        <View style={styles.wrapper}>
+          <Text style={styles.sentCode}>
+            {strings.WE_HAVE_SENT_A_VERIFICATION_CODE}
+          </Text>
+          <Text style={styles.phone}>{phoneNumber}
+            {strings.WE_HAVE_SEND_THE_OTP_ON_YOU_WILL_APPLY_TO_THE_FIELD}
+            
+          </Text>
         </View>
         <View>
           <View style={styles.container}>
             <OTPTextView
               ref={e => (this.input1 = e)}
               containerStyle={styles.textInputContainer}
-              textInputStyle={[styles.roundedTextInput, {borderBottomWidth: 2, borderBottomColor: colors.themeColor}]}
+              textInputStyle={[styles.roundedTextInput]}
               handleTextChange={text => this.setState({otpInput: text})}
               inputCount={5}
               keyboardType="numeric"
             />
           </View>
         </View>
-
         <View>
-          <View style={{flexDirection: 'row'}}>
-          <Text style={styles.footer1}>{strings.DONT_RECEIVE_THE_CODE}</Text>
-<Text style={styles.Resend}>Resend</Text>
+          <View style={styles.resend}>
+            <Text style={styles.footer1}>{strings.DONT_RECEIVE_THE_CODE}</Text>
+            <Text style={styles.Resend}>{strings.RESEND}</Text>
           </View>
-
-          <SendOtpButton
+          <ButtonComponent
             buttonText={strings.GO_TO_HOMEPAGE}
-            onButtonCLick={() => this.checkData() }
+            onButtonCLick={() => this.checkData()}
             isvalid={isvalid}
           />
         </View>
@@ -111,19 +101,21 @@ const {phoneNumber} = this.props.route.params;
 }
 
 const styles = StyleSheet.create({
+  wrapper: {
+    marginVertical: 60,
+  },
   sentCode: {
     textAlign: 'center',
     fontSize: 20,
-    marginHorizontal: 25
-    
+    marginHorizontal: 25,
   },
   phone: {
     textAlign: 'center',
     fontSize: 18,
     marginVertical: 20,
     color: colors.placeholderText,
-    marginHorizontal: 10
-    },
+    marginHorizontal: 10,
+  },
   footer1: {
     marginHorizontal: 80,
     marginVertical: 5,
@@ -131,22 +123,29 @@ const styles = StyleSheet.create({
   container: {
     justifyContent: 'center',
     alignItems: 'center',
-
     padding: 5,
-    
   },
-  Resend:{
+  Resend: {
     color: colors.themeColor,
-marginVertical: 5,
-marginHorizontal: -75
+    marginVertical: 5,
+    marginHorizontal: -75,
   },
-
   textInputContainer: {
     marginBottom: 20,
   },
+  resend: {flexDirection: 'row'},
   roundedTextInput: {
-    // borderRadius: 10,
-    // borderWidth: 1.5,
-    // backgroundColor: colors.textInputBg
+    borderBottomWidth: 2,
+    borderBottomColor: colors.themeColor,
+  },
+  headerView: {
+    flexDirection: 'row',
+    backgroundColor: colors.themeColor,
+  },
+  headerText: {
+    marginVertical: 5,
+    fontSize: 25,
+    color: colors.buttonText,
+    marginHorizontal: 75,
   },
 });

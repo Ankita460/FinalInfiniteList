@@ -5,3 +5,4 @@ export const OTP_VERIFY = getApiUrl('/user/v1/verifyOtp');
 export const USER_SEARCH = getApiUrl('/user/v1/getUserSearch');
 export const SEARCH = getApiUrl('/user/v1/getUserNearMe');
 export const GET_ALL_CONVERSATIONS = getApiUrl('/user/v1/getAllConversations');
+export const GET_CONVERSATION_MESSAGES = getApiUrl('/user/v1/getConversationMessages');

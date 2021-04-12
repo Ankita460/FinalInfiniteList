@@ -4,10 +4,11 @@ export default{
     TAB_ROUTES : "TabRoutes",
     LIST : 'List',
     PROFILE : "Profile",
-    HOMEPAGE :"HomePage",
+    HOME :"Home",
     CHART: "Chart",
     QRCODE: "QrCode",
     IMAGE_ZOOM: "ImageZoom",
-    CHAT: "Chat",
-    CONVERSATION: "ConversationChat"
+    USER_CHAT_MESSAGE: "UserChatMessage",
+    USER_CHAT: "UserChat",
+    DRAWER_ROUTES: "DrawerRoutes"
 }
