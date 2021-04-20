@@ -88,8 +88,8 @@ export function ChangeThemeColor(themeColorId) {
   })
 }
 
-export function UserSearch(searchtext ){
- let URL = `${SEARCH}`+ `?name=${searchtext}` 
+export function UserSearch(searchtext, cord ){
+ let URL = `${SEARCH}`+ `?name=${searchtext}` + `&coordinates=["${cord.longitude}", "${cord.latitude}"]`
  return apiGet(URL)
 }
 

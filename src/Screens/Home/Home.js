@@ -6,6 +6,8 @@ import actions from '../../redux/actions';
 import InfiniteList from '../../Component/InfiniteList';
 import colors from '../../styles/colors';
 import fontFamily from '../../styles/fontFamily';
+import {getCurrentLocation} from '../../utils/helperFunctions';
+import Loader from '../../Component/Loader';
 export default class Home extends Component {
   constructor(props) {
     super(props);
@@ -13,11 +15,23 @@ export default class Home extends Component {
       searchtext: '',
       searchArray: [],
       isloading: false,
+      cord: [],
     };
   }
   onSearch = value => {
-    const {searchtext} = this.state;
+    const {searchtext, cord} = this.state;
     this.setState({searchtext: value});
+
+    getCurrentLocation()
+    .then(res => {
+      this.setState({cord:res})
+      
+
+    })
+    .catch(err => {
+      console.log(err, 'getCurrentLocation ...... error');
+    });
+
 
     if (this.check) {
       clearTimeout(this.check);
@@ -26,7 +40,7 @@ export default class Home extends Component {
     this.check = setTimeout(() => {
       this.setState({isloading: true});
       actions
-        .UserSearch(searchtext)
+        .UserSearch(searchtext, cord)
         .then(res => {
           this.setState({searchArray: res.data, isloading: false});
           console.log(this.state.searchArray, 'search');
@@ -38,8 +52,8 @@ export default class Home extends Component {
     }, 600);
   };
   render() {
-    const {searchArray} = this.state;
-    return (
+    const {searchArray, isloading} = this.state;
+   return (
       <View>
         <Header
           textData={strings.HEADER_SEARCH} />
@@ -55,9 +69,13 @@ export default class Home extends Component {
           showsVerticalScrollIndicator={false}
           numColumns={1}
           keyExtractor={item => item._id}
-          renderItem={({item}) => <InfiniteList data={item} />}
+          renderItem={({item}) => <InfiniteList data={item}/>}
         />
-      </View>
+        <View style={styles.loader}>
+        <Loader isvalid={isloading} size={'small'}/>
+
+        </View>
+        </View>
     );
   }
 }

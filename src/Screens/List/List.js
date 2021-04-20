@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Text, StyleSheet, View, FlatList, RefreshControl} from 'react-native';
+import {StyleSheet, View, FlatList, RefreshControl} from 'react-native';
 import actions from '../../redux/actions';
 import InfiniteList from '../../Component/InfiniteList';
 import Header from '../../Component/Header';
@@ -110,9 +110,7 @@ export default class Cart extends Component {
         <Loader isvalid={true} loadingColor={colors.searchLoadingColor} size={'small'} />
 </View>
 </View>
-        
-        
-      </View>
+ </View>
     );
   }
 }

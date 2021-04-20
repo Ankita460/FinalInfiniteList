@@ -14,7 +14,7 @@ function TextaInput(props) {
   } = props;
   return (
     <TextInput
-      style={styles.TextInput}
+      style={styles.textInput}
       placeholder={placeholder}
       onChangeText={onChangeText}
       secureTextEntry={secureTextEntry}
@@ -27,14 +27,14 @@ function TextaInput(props) {
 export default TextaInput;
 
 const styles = StyleSheet.create({
-  TextInput: {
+  textInput: {
     marginVertical: -40,
     marginHorizontal: 35,
     borderColor: colors.themeColor,
     backgroundColor: colors.themeColor,
     borderRadius: 30,
-
     width: 300,
     height: 55,
+    paddingLeft: 30
   },
 });

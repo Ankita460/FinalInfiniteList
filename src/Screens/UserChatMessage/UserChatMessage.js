@@ -8,6 +8,8 @@ import imagePath from '../../constants/imagePath';
 import Header from '../../Component/Header';
 import {View} from 'react-native';
 import strings from '../../constants/lang';
+import ChatHeader from '../../Component/ChatHeader';
+
 class UserChatMessage extends Component {
   constructor(props) {
     super(props);
@@ -35,10 +37,9 @@ class UserChatMessage extends Component {
   getChatListing = () => {
     const{data} = this.props.route.params;
 
-
-    actions.getUserMessgeOneToOne(data.commonConversationId)
+   actions.getUserMessgeOneToOne(data.commonConversationId)
     .then(res => {
-      const {userData} = this.props.route.params.data;
+      const {userInfo} = this.props.route.params.data;
       //To send back response that all the messages have been seen;
       socketServices.emit(SOCKET_STRINGS.SEEN_ALL_MESSAGES, {
         senderId: data._id,
@@ -55,7 +56,7 @@ class UserChatMessage extends Component {
           user: {
             _id: data.senderId._id,
             name: data.senderId.firstName,
-            avatar: imagePath.profile,
+            avatar: userInfo.profileImg[1].original,
           },
         };
         if (!!data.repliedToText) {
@@ -100,14 +101,17 @@ class UserChatMessage extends Component {
 
   render() {
     const {userInfo}=this.props.route.params.data;
+    const {userData}=this.props
+    const{data} = this.props.route.params;
+
     return (
       <>
-      <Header showBack={true} textData={userInfo.profileImg[1].original} textData={userInfo.fullName}/>
+      <ChatHeader dp={data.userInfo.profileImg[1].original} name={data.userInfo.fullName}/>
       <GiftedChat
         messages={this.state.messages}
         onSend={this.onSend}
         user={{
-          _id: 1,
+          _id: userData._id,
         }}
       />
     </>

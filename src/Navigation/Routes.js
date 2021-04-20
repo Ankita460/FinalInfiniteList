@@ -1,6 +1,6 @@
 import React ,{useContext} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
+// import {createStackNavigator} from '@react-navigation/stack';
 import AuthStack from './AuthStack';
 import MainStack from "./MainStack"
 
@@ -19,6 +19,7 @@ function Routes(props){
 
 
         {!!userData.accessToken?<>{MainStack()}</>:<>{AuthStack()}</>}
+        
         {/* {AuthStack()} */}
         {/* {MainStack()} */}
          

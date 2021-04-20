@@ -2,7 +2,6 @@ import React from 'react';
 import {View, Text, Image, StyleSheet, TouchableOpacity} from 'react-native';
 import colors from '../styles/colors';
 import {useNavigation} from '@react-navigation/native';
-import navigationStrings from '../constants/navigationStrings';
 
 export default function UserChatComponent({data, onNavigation}) {
   const navigation = useNavigation();
@@ -12,6 +11,7 @@ export default function UserChatComponent({data, onNavigation}) {
         onPress={() => onNavigation(data)}>
         <View style={Styles.wrapper}>
           <View style={Styles.container}>
+          
             <Image
               source={{uri: data.userInfo.profileImg[1].original}}
               style={Styles.profile}

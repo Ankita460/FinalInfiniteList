@@ -12,6 +12,10 @@ export default function Loader({isvalid, loadingColor, size}) {
       </View>
     );
   }
+  return(
+    <View></View>
+
+  )
   
 }
 

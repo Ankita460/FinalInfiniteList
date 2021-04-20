@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {useState} from 'react';
 import {Text, StyleSheet, View, Image, ImageBackground} from 'react-native';
 import InputText from '../../Component/InputText';
 import strings from '../../constants/lang';
@@ -11,7 +11,6 @@ import imagePath from '../../constants/imagePath';
 import {LoginButton, AccessToken} from 'react-native-fbsdk';
 import navigationStrings from '../../constants/navigationStrings';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
-
 import {
   GoogleSignin,
   GoogleSigninButton,
@@ -19,29 +18,38 @@ import {
 } from '@react-native-google-signin/google-signin';
 GoogleSignin.configure();
 import fontFamily from '../../styles/fontFamily';
-export default class Login extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      phoneNumber: '',
-     isvalid: '',
-    };
-  }
 
-  setNumber = text => {
-    this.setState({
-      phoneNumber: text,
-    });
-  };
-
-  isValidate = () => {
-    const {phoneNumber} = this.state;
+export default function Login (props) {
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     phoneNumber: '',
+  //    isvalid: '',
+  //   };
+  // }
+ const [state, setState] = useState({
+phoneNumber: '',
+isvalid: '',
+ })
+  // setNumber = text => {
+  //   this.setState({
+  //     phoneNumber: text,
+  //   });
+  // };
+  const updateState = data => setState(prevState => ({...prevState, ...data}));
+const setNumber = text=>{
+  updateState({phoneNumber: text})
+}
+ const isValidate = () => {
+    const {phoneNumber} = state;
     let errorMessage = validations({phoneNumber: phoneNumber});
-    this.setState({
-      isvalid: true,
-    });
+    // this.setState({
+    //   isvalid: true,
+    // });
+    updateState({isvalid: true})
     if (errorMessage) {
-      this.setState({isvalid: false});
+      // this.setState({isvalid: false});
+      updateState({isvalid: false})
       showMessage({
         message: errorMessage,
         icon: 'warning',
@@ -53,9 +61,9 @@ export default class Login extends Component {
     return true;
   };
 
-  checkData = () => {
-    const {phoneNumber} = this.state;
-    if (this.isValidate()) {
+  const checkData = () => {
+    const {phoneNumber} = state;
+    if (isValidate()) {
       actions
         .loginWithOTP({
           contactDetails: {
@@ -65,8 +73,9 @@ export default class Login extends Component {
           },
         })
         .then(response => {
-          this.setState({isvalid: false});
-          this.props.navigation.navigate(navigationStrings.OTP_VERIFICATION, {
+          // this.setState({isvalid: false});
+          updateState({isvalid: false})
+          props.navigation.navigate(navigationStrings.OTP_VERIFICATION, {
             userId: response.data.userId,
             phoneNumber: phoneNumber,
           });
@@ -77,7 +86,8 @@ export default class Login extends Component {
           });
         })
         .catch(error => {
-          this.setState({isvalid: false}),
+          // this.setState({isvalid: false}),
+          updateState({isvalid: false}),
             showMessage({
               type: 'danger',
               message: 'Login failed ',
@@ -88,7 +98,7 @@ export default class Login extends Component {
     }
   };
 
-  signIn = async () => {
+  const signIn = async () => {
     try {
       await GoogleSignin.hasPlayServices();
       const userInfo = await GoogleSignin.signIn();
@@ -106,8 +116,8 @@ export default class Login extends Component {
     }
   };
 
-  render() {
-    const {isvalid} = this.state;
+  
+    const {isvalid} = state;
     return (
     <KeyboardAwareScrollView>
       <View style={styles.wrapper}>
@@ -124,12 +134,12 @@ export default class Login extends Component {
             <InputText
               placeholder={strings.ENTER_PHONE_NUMBER}
               keyboardType={'numeric'}
-              onChangeText={this.setNumber}
+              onChangeText={setNumber}
             />
           </View>
           <ButtonComponent
             buttonText={strings.SEND_OTP}
-            onButtonCLick={() => this.checkData()}
+            onButtonCLick={() => checkData()}
             isvalid={isvalid}
           />
           <View style={styles.facebookLogin}>
@@ -151,8 +161,8 @@ export default class Login extends Component {
               style={styles.googleSignin}
               size={GoogleSigninButton.Size.Wide}
               color={GoogleSigninButton.Color.Dark}
-              onPress={this.signIn}
-              disabled={this.state.isSigninInProgress}
+              onPress={signIn}
+              disabled={state.isSigninInProgress}
             />
           </View>
         </View>
@@ -160,7 +170,7 @@ export default class Login extends Component {
       </KeyboardAwareScrollView>
     );
   }
-}
+
 
 const styles = StyleSheet.create({
   container: {

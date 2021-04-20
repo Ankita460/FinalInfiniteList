@@ -4,15 +4,14 @@ import imagePath from '../constants/imagePath';
 import colors from '../styles/colors';
 import {useNavigation} from '@react-navigation/native';
 
-function Header({textData, onBack, showBack= ''}) {
+function Header({textData,  showBack= ''}) {
   const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={() => navigation.openDrawer()}>
-        {!!showBack ?(<Image source={imagePath.backIcon} style={styles.menu} />)
-        :(<Image source={imagePath.menu} style={styles.menu}/>)
-}
+        <Image source={imagePath.menu} style={styles.menu}/>
+
       </TouchableOpacity>
       <Text style={styles.textData}>{textData}</Text>
     </View>
